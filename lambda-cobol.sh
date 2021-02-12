@@ -85,7 +85,7 @@ echo "### Listing active Lambdas..."
 aws lambda list-functions --region "$AWS_REGION"
 
 echo ' ' | tee -a "$REPORT"
-echo "### Inkoking Lambda..."
+echo "### Inkoking deployed Lambda synchronously ..." | tee -a "$REPORT"
 aws lambda invoke --function "$LAMBDA_NAME" --region="$AWS_REGION" outfile.txt | tee -a "$REPORT"
 echo 'invocation result: ' | tee -a "$REPORT"
 cat outfile.txt | tee -a "$REPORT"
@@ -104,7 +104,7 @@ curl "$LAMBDA_URL" | tee -a "$REPORT"
 
 sleep 3s
 
-echo ' '
+echo ' ' >> "$REPORT"
 echo '```' >> "$REPORT"
 
 rm -f README.md
