@@ -133,7 +133,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 10:52:10 UTC 2021
+### execution date: Fri Feb 12 10:57:57 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -144,17 +144,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153189,
+            "CodeSize": 153185,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T10:47:52.694+0000",
-            "CodeSha256": "TlI2oNVjiBckXXeeVQ3J5W5kxgiGr+qcvFB27SmnTfM=",
+            "LastModified": "2021-02-12T10:54:20.984+0000",
+            "CodeSha256": "ZzvMOSo0h4GMHLK+BH65jn0k0b6aT4vMW7yIy8r3Go8=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "76998c30-9114-456e-ae30-246a5ef9bdee",
+            "RevisionId": "a2f0004e-8019-4991-877b-47d31fcd59c2",
             "PackageType": "Zip"
         },
         {
@@ -222,10 +222,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613127245/19b494c2-2edd-40eb-b20f-a212dc04d760
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613127566/165e7967-31ba-4920-b9d4-0fa4e74d136c
 
 
-2021-02-12 10:54:16 - Waiting for stack create/update to complete
+2021-02-12 10:59:36 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
@@ -243,6 +243,7 @@ Successfully created/updated stack - lambda-cobol-stack in us-east-1
 
  
  
+### Inkoking deployed Lambda synchronously ...
 {
     "StatusCode": 200,
     "ExecutedVersion": "$LATEST"
@@ -274,4 +275,5 @@ invocation result:
 }
  
 ### Running curl https request to https://s77zp2ryz1.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
-Hello World from COBOL!```
+Hello World from COBOL! 
+```
