@@ -87,9 +87,8 @@ aws lambda list-functions --region "$AWS_REGION"
 echo ' ' | tee -a "$REPORT"
 echo "### Inkoking Lambda..."
 aws lambda invoke --function "$LAMBDA_NAME" --region="$AWS_REGION" outfile.txt | tee -a "$REPORT"
-echo 'outfile.txt: ' | tee -a "$REPORT"
+echo 'invocation result: ' | tee -a "$REPORT"
 cat outfile.txt | tee -a "$REPORT"
-echo ' '
 cat outfile.txt | grep 'Hello World from COBOL'
 
 echo ' ' | tee -a "$REPORT"
