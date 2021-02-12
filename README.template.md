@@ -107,11 +107,10 @@ imposed by specifications) implements the requirements of [custom Lambda runtime
 5) The SAM description is processed by AWS Lambda and CloudFormation to deploy the function.
 6) SAM CLI is used to check proper deployment.
 7) SAM CLI invokes the function synchronously.
-8) The DNS name under which the Lambda was published is obtained from the API gateway
-9) curl calls the URL with the obtained DNS to validate the proper execution of the newly deployed Lambda
+8) curl calls the URL with the obtained DNS to validate the proper execution of the newly deployed Lambda. The URL for curl is built   following template: https://$API_ID.execute-api.$AWS_REGION.amazonaws.com/Prod/$LAMBDA_NAME. $API_ID is dynamic and obtained via a ```aws apigateway get-rest-apis``` CLI command.
 
 **Note:** the version of GnuCobol currently used is v2.2. A version of published in December, 2020. But, its libcob runtime library has hardwired 
-dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambbda runtime 
+dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime 
 gets updated.  
 
 ## Fork and Setup  
