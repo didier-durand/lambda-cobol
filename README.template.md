@@ -4,6 +4,17 @@
 
 ![Cobol Lambdas on AWS](https://github.com/didier-durand/lambda-cobol/workflows/Cobol%20Lambdas%20on%20AWS/badge.svg)
 
+* [Goal](README.md#goal)
+* [Cobol](README.md#cobol)
+* [Lambda Functions and Serverless Architecture](README.md#lambda-functions-and-serverless-architecture)
+* [Serverless Application Model](README.md#serverless-application-model)
+* [Workflow and Componnents](README.md#workflow-annd-components)
+* [Fork and Setup](README.md#fork-and-setup)
+* [Execution Highlights](README.md#execution-highlights)
+
+
+## Goal
+
 This repository implements a fully automated [Github Workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) to deploy 
 and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCobol](https://en.wikipedia.org/wiki/GnuCOBOL). 
 GnuCobol compiles the source code as a native x86 module depending on the libcob library. Both are packaged and uploaded as a [custom Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html)
@@ -52,6 +63,7 @@ And this importance is not going to decline anytime soon: [IBM reports](https://
 that more than 5 billion additional lines are produced each year!
 
 ## Lambda Functions and Serverless Architecture
+
 <p align="center">
 <img src="https://github.com/didier-durand/lambda-cobol/blob/main/img/lambda-arch.jpeg" height="320">
 </p>
