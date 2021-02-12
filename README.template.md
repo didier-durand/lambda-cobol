@@ -106,18 +106,20 @@ This allows the implementation of [Infrastructure-as-Code](https://en.wikipedia.
 
 ## Workflow and Components
 
-Implemented as a Github Action, workflow steps - scripted in [lambda-cobol.sh](lambda-cobol.sh) - are:
+Implemented as a Github Action, the workflow  - scripted in [lambda-cobol.sh](lambda-cobol.sh) - comprises following key steps:
 
 1) A Docker image [is constructed](Dockerfile) to install the GnuCobol compiler and its dependencies on top of the base Amazon Linux image. The 
 purpose of such a container is to leverage the isolation provided by containers. Consequently, the build environment is fully controlled.
 2) This Cobol builder imports the source code of [hello-world.cob](hello-world.cob) and compiles it to generate an x86 native binary named ```hello-world```.
-3) This binary is packaged with other required runtime artefacts. The libcob library is required by GnuCobol. The shell script ```bootstrap```(name 
+3) This binary is packaged, via SAM CLI, with other required runtime artefacts. The libcob library is required by GnuCobol. The shell script ```bootstrap```(name 
 imposed by specifications) implements the requirements of [custom Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html).
 4) This package is deployed on the Lambda service via [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
 5) The SAM description is processed by AWS Lambda and CloudFormation to deploy the function.
 6) SAM CLI is used to check proper deployment.
 7) SAM CLI invokes the function synchronously.
 8) curl calls the URL with the obtained DNS to validate the proper execution of the newly deployed Lambda. The URL for curl is built   following template: https://$API_ID.execute-api.$AWS_REGION.amazonaws.com/Prod/$LAMBDA_NAME. $API_ID is dynamic and obtained via a ```aws apigateway get-rest-apis``` CLI command.
+
+When a previous deployment of the CloudFormation stack is active, it gets deleted just before the SAM build to trigger the entire CloudFormation deployment process.
 
 **Note:** the version of GnuCobol currently used is v2.2. A version of published in December, 2020. But, its libcob runtime library has hardwired 
 dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime 
