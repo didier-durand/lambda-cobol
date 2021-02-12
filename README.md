@@ -8,7 +8,7 @@
 * [Cobol](README.md#cobol)
 * [Lambda Functions and Serverless Architecture](README.md#lambda-functions-and-serverless-architecture)
 * [Serverless Application Model](README.md#serverless-application-model)
-* [Workflow and Componnents](README.md#workflow-annd-components)
+* [Workflow and Components](README.md#workflow-and-components)
 * [Fork and Setup](README.md#fork-and-setup)
 * [Execution Highlights](README.md#execution-highlights)
 
@@ -142,7 +142,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 12:09:28 UTC 2021
+### execution date: Fri Feb 12 12:13:38 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -153,17 +153,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153188,
+            "CodeSize": 153184,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T12:00:13.057+0000",
-            "CodeSha256": "UqZ3fkOSwu4B/afADJPTQhDbBxiPIEW8HMV6qA02EwE=",
+            "LastModified": "2021-02-12T12:11:22.254+0000",
+            "CodeSha256": "0m6bwTlPNIytS7QMNwGg+NdYWx/iguwCfoUVTqptMrs=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "5302b793-3c77-48b4-9cd9-5c054c797789",
+            "RevisionId": "e9ba4001-05ee-42fd-b07a-b5950fbae0de",
             "PackageType": "Zip"
         },
         {
@@ -231,10 +231,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613131866/87abe5ce-7e69-482f-9533-45ad35fbb147
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613132132/6affe513-dab1-461a-87d1-4b7137299291
 
 
-2021-02-12 12:11:16 - Waiting for stack create/update to complete
+2021-02-12 12:15:43 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
