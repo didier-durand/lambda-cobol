@@ -13,9 +13,7 @@ The [benefits of the serverless architecture](https://aws.amazon.com/lambda/serv
 applications. The purpose of this showcase is to demonstrate how those benefits can be combined with legacy code, still "doing the job" and 
 delivering solid business value, to further extend its life.
 
-The deployed Cobol program is accessible over http via the definition of a REST service on the [AWS API gateway](https://aws.amazon.com/api-gateway/). 
-The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol/actions) 
-tab here above.
+The deployed Cobol program is accessible over http via the definition of a REST service on the [AWS API gateway](https://aws.amazon.com/api-gateway/). The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol/actions) tab here above. Also, some highlights of last execution are reported in last section of this page.
 
 This initial use case will be refined in upcoming versions by adding a database, calling subprograms, etc.
 
