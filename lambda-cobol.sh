@@ -58,7 +58,7 @@ ls -lh "$(pwd)/lambda-cobol.code/lib"
 
 echo "### Cleaning up existing CF stack..."
 aws cloudformation describe-stacks --region "$AWS_REGION"
-#(aws cloudformation delete-stack --region "$AWS_REGION" --stack-name "$STACK_NAME" && sleep 90s)|| true
+(aws cloudformation delete-stack --region "$AWS_REGION" --stack-name "$STACK_NAME" && sleep 90s) || true
 
 # Check other existing lambdas
 echo ' ' | tee -a "$REPORT"
@@ -98,7 +98,7 @@ aws apigateway get-rest-apis --region "$AWS_REGION" | tee -a "$REPORT"
 API_ID=$(aws apigateway get-rest-apis --region "$AWS_REGION" --output text --query "items[?name == \`$STACK_NAME\`].id | [0]")
 echo "api id: $API_ID" | tee -a "$REPORT"
 
-LAMBDA_URL="https://$API_ID.execute-api.us-east-1.amazonaws.com/Prod/$LAMBDA_NAME"
+LAMBDA_URL="https://$API_ID.execute-api.$AWS_REGION.amazonaws.com/Prod/$LAMBDA_NAME"
 echo ' ' | tee -a "$REPORT"
 echo "### Running curl https request to $LAMBDA_URL ..." | tee -a "$REPORT"
 curl "$LAMBDA_URL" | tee -a "$REPORT"
