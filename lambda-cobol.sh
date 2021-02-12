@@ -58,7 +58,7 @@ ls -lh "$(pwd)/lambda-cobol.code/lib"
 
 echo "### Cleaning up existing CF stack..."
 aws cloudformation describe-stacks --region "$AWS_REGION"
-(aws cloudformation delete-stack --region "$AWS_REGION" --stack-name "$STACK_NAME" && sleep 90s) || true
+(aws cloudformation delete-stack --region "$AWS_REGION" --stack-name "$STACK_NAME" && sleep 30s) || true
 
 # Check other existing lambdas
 echo ' ' | tee -a "$REPORT"
