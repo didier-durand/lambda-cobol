@@ -1,8 +1,8 @@
-<img src="https://github.com/didier-durand/lambda-cobol-PRIVATE/blob/main/img/aws-lambda.png" height="110"> <img src="https://github.com/didier-durand/lambda-cobol-PRIVATE/blob/main/img/cobol-logo.jpeg" height="110">
+<img src="https://github.com/didier-durand/lambda-cobol/blob/main/img/aws-lambda.png" height="110"> <img src="https://github.com/didier-durand/lambda-cobol/blob/main/img/cobol-logo.jpeg" height="110">
 
 # Legacy Serverless Modernization: Cobol and AWS Lambda functions
 
-![Cobol Lambdas on AWS](https://github.com/didier-durand/lambda-cobol-PRIVATE/workflows/Cobol%20Lambdas%20on%20AWS/badge.svg)
+![Cobol Lambdas on AWS](https://github.com/didier-durand/lambda-cobol/workflows/Cobol%20Lambdas%20on%20AWS/badge.svg)
 
 This repository implements a fully automated [Github Workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) to deploy 
 and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCobol](https://en.wikipedia.org/wiki/GnuCOBOL). 
@@ -14,7 +14,7 @@ applications. The purpose of this showcase is to demonstrate how those benefits 
 delivering solid business value, to further extend its life.
 
 The deployed Cobol program is accessible over http via the definition of a REST service on the [AWS API gateway](https://aws.amazon.com/api-gateway/). 
-The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol-PRIVATE/actions) 
+The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol/actions) 
 tab here above.
 
 This initial use case will be refined in upcoming versions by adding a database, calling subprograms, etc.
@@ -27,7 +27,7 @@ The purpose of this unusual / unexpected use case with Cobol is to trigger furth
 below will demonstrate that it makes quite a lot of sense to reuse the massive existing assets on a modern cloud platform to further extend their 
 life and leverage them in new ways. It's especially attractive given the incredibly affordable costs of Lambdas when compared to costs of mainframe Mips!
 
-Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol-PRIVATE/issues) for this purpose)
+Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol/issues) for this purpose)
 
 ## Cobol
 
@@ -55,7 +55,7 @@ that more than 5 billion additional lines are produced each year!
 
 ## Lambda Functions and Serverless Architecture
 <p align="center">
-<img src="https://github.com/didier-durand/lambda-cobol-PRIVATE/blob/main/img/lambda-arch.jpeg" height="320">
+<img src="https://github.com/didier-durand/lambda-cobol/blob/main/img/lambda-arch.jpeg" height="320">
 </p>
 <p align="center">
 <b>Canonical Lambda architecture (Python example)</b>
@@ -133,7 +133,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 10:42:08 UTC 2021
+### execution date: Fri Feb 12 10:46:07 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -144,17 +144,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153185,
+            "CodeSize": 153187,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T10:41:17.601+0000",
-            "CodeSha256": "c8aNjMF90rbxvYKyLGHoodAU6VlNuMQ7LAFitNY3VaA=",
+            "LastModified": "2021-02-12T10:43:58.954+0000",
+            "CodeSha256": "9uqqJGKOUK3TuKt6plUw/W4P88/7OY5cORRmqE5JJfk=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "8c5159d6-46b2-42bf-878f-bfcf2b59e01b",
+            "RevisionId": "8823ce12-f412-49d0-a927-a72a462cbf82",
             "PackageType": "Zip"
         },
         {
@@ -222,10 +222,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613126623/7d0d6ef8-55d1-49ce-867e-841c16c7a0ab
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613126857/e49b0e90-534b-4cc5-9043-f75003d7495e
 
 
-2021-02-12 10:43:54 - Waiting for stack create/update to complete
+2021-02-12 10:47:47 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
