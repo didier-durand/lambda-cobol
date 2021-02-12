@@ -133,7 +133,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 10:39:22 UTC 2021
+### execution date: Fri Feb 12 10:42:08 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -144,17 +144,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153186,
+            "CodeSize": 153185,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T10:28:41.873+0000",
-            "CodeSha256": "HH+LGRWu0jOudsDyajhEY2qR7Ac5XyvDS9UWqWTPin0=",
+            "LastModified": "2021-02-12T10:41:17.601+0000",
+            "CodeSha256": "c8aNjMF90rbxvYKyLGHoodAU6VlNuMQ7LAFitNY3VaA=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "b636e129-7e77-4b98-b58c-80e1f9125444",
+            "RevisionId": "8c5159d6-46b2-42bf-878f-bfcf2b59e01b",
             "PackageType": "Zip"
         },
         {
@@ -222,10 +222,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613126462/66856f54-cc6f-4cb9-9e42-2a3cbfc92834
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613126623/7d0d6ef8-55d1-49ce-867e-841c16c7a0ab
 
 
-2021-02-12 10:41:12 - Waiting for stack create/update to complete
+2021-02-12 10:43:54 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
