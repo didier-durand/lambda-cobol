@@ -107,11 +107,10 @@ imposed by specifications) implements the requirements of [custom Lambda runtime
 5) The SAM description is processed by AWS Lambda and CloudFormation to deploy the function.
 6) SAM CLI is used to check proper deployment.
 7) SAM CLI invokes the function synchronously.
-8) The DNS name under which the Lambda was published is obtained from the API gateway
-9) curl calls the URL with the obtained DNS to validate the proper execution of the newly deployed Lambda
+8) curl calls the URL with the obtained DNS to validate the proper execution of the newly deployed Lambda. The URL for curl is built   following template: https://$API_ID.execute-api.$AWS_REGION.amazonaws.com/Prod/$LAMBDA_NAME. $API_ID is dynamic and obtained via a ```aws apigateway get-rest-apis``` CLI command.
 
 **Note:** the version of GnuCobol currently used is v2.2. A version of published in December, 2020. But, its libcob runtime library has hardwired 
-dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambbda runtime 
+dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime 
 gets updated.  
 
 ## Fork and Setup  
@@ -133,7 +132,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 11:41:53 UTC 2021
+### execution date: Fri Feb 12 11:58:16 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -144,17 +143,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153187,
+            "CodeSize": 153195,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T10:59:41.261+0000",
-            "CodeSha256": "WFkebBNN015GPvxF2fkVqRN+76WjD9JUXczxLd6Uj8M=",
+            "LastModified": "2021-02-12T11:43:44.042+0000",
+            "CodeSha256": "K5efU3oPiwd9o7HUYhdMjsapKRu8Wd1YGTSDpLLYX50=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "7b46a86f-3fd9-4613-8c85-0c1e68788f5f",
+            "RevisionId": "6d9b969c-b2ac-43da-a695-77b9970cf66b",
             "PackageType": "Zip"
         },
         {
@@ -222,10 +221,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613130208/a8649704-584f-4a90-a0fa-74aeb1bab780
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613131191/7e41d8b7-f93a-4bc2-8115-ecd963bbacf3
 
 
-2021-02-12 11:43:38 - Waiting for stack create/update to complete
+2021-02-12 12:00:02 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
