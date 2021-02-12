@@ -1,0 +1,19 @@
+Transform: 'AWS::Serverless-2016-10-31'
+
+Resources:
+
+  HelloWorldCobol:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: lambda-cobol-hello-world
+      Description: Lambda Cobol Hello World
+      Runtime: provided
+      Handler: hello-world
+      CodeUri: lambda-cobol.code
+      PackageType: Zip
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /lambda-cobol-hello-world
+            Method: get

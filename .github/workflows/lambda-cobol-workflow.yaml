@@ -1,0 +1,58 @@
+name: Cobol Lambdas on AWS
+
+on:  
+
+  push:
+  
+  schedule:
+    - cron:  '0 1 * * THU' 
+  
+  workflow_dispatch:
+    inputs:
+      workflowAction:
+        description: 'Action'
+        default: 'Deploy Cobol Lambdas on AWS'
+        required: true
+ 
+jobs:
+  lambda-cobol:
+  
+    runs-on: ubuntu-20.04
+
+    steps:
+      
+    - name: Check Environment
+      run: |-
+        lsb_release -a
+        echo ' '
+        aws --version
+        echo ' '
+        sam --version
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+            
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+                
+    - name: Compile Cobol and Deploy Lambda
+      env: 
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+      run: |-
+        bash lambda-cobol.sh
+                         
+    - name: Commit Back README.md
+      run: | 
+        git add README.md
+        git config --local user.name "Github Action from $GITHUB_ACTOR"
+        git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git diff --quiet && git diff --staged --quiet || git commit -m "execution update into README.md committed back by actor $GITHUB_ACTOR on $HELMALYZER_TIMESTAMP (workflow: $GITHUB_WORKFLOW - job: $GITHUB_JOB - sha: $GITHUB_SHA - ref: $GITHUB_REF)"
+        git config pull.rebase false
+        git diff --quiet && git diff --staged --quiet || git pull
+        git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
