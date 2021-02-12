@@ -4,6 +4,17 @@
 
 ![Cobol Lambdas on AWS](https://github.com/didier-durand/lambda-cobol/workflows/Cobol%20Lambdas%20on%20AWS/badge.svg)
 
+* [Goal](README.md#goal)
+* [Cobol](README.md#cobol)
+* [Lambda Functions and Serverless Architecture](README.md#lambda-functions-and-serverless-architecture)
+* [Serverless Application Model](README.md#serverless-application-model)
+* [Workflow and Componnents](README.md#workflow-annd-components)
+* [Fork and Setup](README.md#fork-and-setup)
+* [Execution Highlights](README.md#execution-highlights)
+
+
+## Goal
+
 This repository implements a fully automated [Github Workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) to deploy 
 and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCobol](https://en.wikipedia.org/wiki/GnuCOBOL). 
 GnuCobol compiles the source code as a native x86 module depending on the libcob library. Both are packaged and uploaded as a [custom Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html)
@@ -13,9 +24,7 @@ The [benefits of the serverless architecture](https://aws.amazon.com/lambda/serv
 applications. The purpose of this showcase is to demonstrate how those benefits can be combined with legacy code, still "doing the job" and 
 delivering solid business value, to further extend its life.
 
-The deployed Cobol program is accessible over http via the definition of a REST service on the [AWS API gateway](https://aws.amazon.com/api-gateway/). 
-The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol/actions) 
-tab here above.
+The deployed Cobol program is accessible over http via the definition of a REST service on the [AWS API gateway](https://aws.amazon.com/api-gateway/). The results of the various executions of the workflow in this repo can be seen in [Actions](https://github.com/didier-durand/lambda-cobol/actions) tab here above. Also, some highlights of last execution are reported in last section of this page.
 
 This initial use case will be refined in upcoming versions by adding a database, calling subprograms, etc.
 
@@ -54,6 +63,7 @@ And this importance is not going to decline anytime soon: [IBM reports](https://
 that more than 5 billion additional lines are produced each year!
 
 ## Lambda Functions and Serverless Architecture
+
 <p align="center">
 <img src="https://github.com/didier-durand/lambda-cobol/blob/main/img/lambda-arch.jpeg" height="320">
 </p>
@@ -132,7 +142,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 11:58:16 UTC 2021
+### execution date: Fri Feb 12 12:09:28 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -143,17 +153,17 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "Runtime": "provided",
             "Role": "arn:aws:iam::514764745669:role/lambda-cobol-stack-HelloWorldCobolRole-VIP25AGEBSKA",
             "Handler": "hello-world",
-            "CodeSize": 153195,
+            "CodeSize": 153188,
             "Description": "Lambda Cobol Hello World",
             "Timeout": 3,
             "MemorySize": 128,
-            "LastModified": "2021-02-12T11:43:44.042+0000",
-            "CodeSha256": "K5efU3oPiwd9o7HUYhdMjsapKRu8Wd1YGTSDpLLYX50=",
+            "LastModified": "2021-02-12T12:00:13.057+0000",
+            "CodeSha256": "UqZ3fkOSwu4B/afADJPTQhDbBxiPIEW8HMV6qA02EwE=",
             "Version": "$LATEST",
             "TracingConfig": {
                 "Mode": "PassThrough"
             },
-            "RevisionId": "6d9b969c-b2ac-43da-a695-77b9970cf66b",
+            "RevisionId": "5302b793-3c77-48b4-9cd9-5c054c797789",
             "PackageType": "Zip"
         },
         {
@@ -221,10 +231,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613131191/7e41d8b7-f93a-4bc2-8115-ecd963bbacf3
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613131866/87abe5ce-7e69-482f-9533-45ad35fbb147
 
 
-2021-02-12 12:00:02 - Waiting for stack create/update to complete
+2021-02-12 12:11:16 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
