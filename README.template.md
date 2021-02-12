@@ -8,7 +8,7 @@
 * [Cobol](README.md#cobol)
 * [Lambda Functions and Serverless Architecture](README.md#lambda-functions-and-serverless-architecture)
 * [Serverless Application Model](README.md#serverless-application-model)
-* [Workflow and Componnents](README.md#workflow-annd-components)
+* [Workflow and Components](README.md#workflow-and-components)
 * [Fork and Setup](README.md#fork-and-setup)
 * [Execution Highlights](README.md#execution-highlights)
 
