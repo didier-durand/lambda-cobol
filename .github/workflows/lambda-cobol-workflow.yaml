@@ -17,11 +17,13 @@ on:
 jobs:
   lambda-cobol:
   
+    environment: prod
+  
     runs-on: ubuntu-20.04
 
     steps:
       
-    - name: Check Environment
+    - name: Check Installation
       run: |-
         lsb_release -a
         echo ' '
