@@ -85,17 +85,18 @@ echo "### Listing active Lambdas..."
 aws lambda list-functions --region "$AWS_REGION"
 
 echo ' ' | tee -a "$REPORT"
-echo "### Inkoking deployed Lambda synchronously ..." | tee -a "$REPORT"
+echo "### Inkoking deployed Lambda synchronously from CLI..." | tee -a "$REPORT"
 aws lambda invoke --function "$LAMBDA_NAME" --region="$AWS_REGION" outfile.txt | tee -a "$REPORT"
-echo 'invocation result: ' | tee -a "$REPORT"
+echo 'invocation result:' | tee -a "$REPORT"
 cat outfile.txt | tee -a "$REPORT"
+#check if ok
 cat outfile.txt | grep 'Hello World from COBOL'
 
-echo ' ' | tee -a "$REPORT"
+echo ' ' | tee -a "$REPORT" && echo ' ' | tee -a "$REPORT"
 echo "### Obtaining API gateway config..." | tee -a "$REPORT"
 aws apigateway get-rest-apis --region "$AWS_REGION" | tee -a "$REPORT"
 API_ID=$(aws apigateway get-rest-apis --region "$AWS_REGION" --output text --query "items[?name == \`$STACK_NAME\`].id | [0]")
-echo "api id: $API_ID"
+echo "api id: $API_ID" | tee -a "$REPORT"
 
 LAMBDA_URL="https://$API_ID.execute-api.us-east-1.amazonaws.com/Prod/$LAMBDA_NAME"
 echo ' ' | tee -a "$REPORT"
