@@ -121,9 +121,7 @@ imposed by specifications) implements the requirements of [custom Lambda runtime
 
 When a previous deployment of the CloudFormation stack is active, it gets deleted just before the SAM build to trigger the entire CloudFormation deployment process.
 
-**Note:** the version of GnuCobol currently used is v2.2. A version of published in December, 2020. But, its libcob runtime library has hardwired 
-dependencies on very recent Linux system libraries, that are not yet available in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime 
-gets updated.  
+**Note:** the version of GnuCobol currently used is v2.2. A [version 3.1 was published](https://sourceforge.net/projects/gnucobol/files/gnucobol/) in late December, 2020. But, its libcob runtime library has hardwired dependencies on very recent Linux system libraries, that are not yet available with proper version in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime gets updated.  
 
 ## Fork and Setup  
 
@@ -144,7 +142,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Fri Feb 12 12:33:46 UTC 2021
+### execution date: Sat Feb 13 05:40:01 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -221,10 +219,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613133352/f5b57eaa-f9b9-41d6-9a69-15795df05eaa
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613194928/44e78dda-fd5b-4b67-afbf-506e9496e53c
 
 
-2021-02-12 12:35:58 - Waiting for stack create/update to complete
+2021-02-13 05:42:18 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
@@ -244,16 +242,16 @@ CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        Resou
                          pi                                                Initiated              
 CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
                          pi                                                                       
-CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
-                         yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
                          n                        urcePermissionProd                              
-CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
-                         yment                    ymentaf1c952223          Initiated              
 CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
                          n                        urcePermissionProd       Initiated              
+CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
+                         yment                    ymentaf1c952223                                 
 CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
+CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
+                         yment                    ymentaf1c952223          Initiated              
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
                                                   tage                                            
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   Resource creation      
@@ -287,9 +285,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "gl0zi0fvh7",
+            "id": "ipemj23239",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-02-12T12:36:23+00:00",
+            "createdDate": "2021-02-13T05:42:42+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -301,8 +299,8 @@ invocation result:
         }
     ]
 }
-api id: gl0zi0fvh7
+api id: ipemj23239
  
-### Running curl https request to https://gl0zi0fvh7.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://ipemj23239.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
