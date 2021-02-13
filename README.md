@@ -18,7 +18,7 @@
 This repository implements a fully automated [Github Workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) to deploy 
 and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCobol](https://en.wikipedia.org/wiki/GnuCOBOL). 
 GnuCobol compiles the source code as a native x86 module depending on the libcob library. Both are packaged and uploaded as a [custom Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html)
-by the workflow.
+by the workflow. The workflow is scheduled by cron on a minimalweekly basis to make sure that it keeps working.
 
 The [benefits of the serverless architecture](https://aws.amazon.com/lambda/serverless-architectures-learn-more/) are not reserved to newly written 
 applications. The purpose of this showcase is to demonstrate how those benefits can be combined with legacy code, still "doing the job" and 
@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Sat Feb 13 06:55:40 UTC 2021
+### execution date: Sat Feb 13 07:00:12 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -220,18 +220,18 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613199462/68070e61-5b63-40bf-b240-d98ab97032b2
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613199750/727bce5b-fa9e-4fd1-ad82-7f6421b7f5d0
 
 
-2021-02-13 06:57:52 - Waiting for stack create/update to complete
+2021-02-13 07:02:40 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
 ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
 -------------------------------------------------------------------------------------------------
+CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      Resource creation      
                                                                            Initiated              
-CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_COMPLETE          AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          Resource creation      
@@ -243,14 +243,14 @@ CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        Resou
                          pi                                                Initiated              
 CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
                          pi                                                                       
-CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
-                         yment                    ymentaf1c952223                                 
-CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
-                         n                        urcePermissionProd       Initiated              
 CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
                          n                        urcePermissionProd                              
+CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
+                         yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
                          yment                    ymentaf1c952223          Initiated              
+CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
+                         n                        urcePermissionProd       Initiated              
 CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
@@ -286,9 +286,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "gt6pk4h5de",
+            "id": "7cp9xy4e4m",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-02-13T06:58:16+00:00",
+            "createdDate": "2021-02-13T07:03:05+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -300,8 +300,8 @@ invocation result:
         }
     ]
 }
-api id: gt6pk4h5de
+api id: 7cp9xy4e4m
  
-### Running curl https request to https://gt6pk4h5de.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://7cp9xy4e4m.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
