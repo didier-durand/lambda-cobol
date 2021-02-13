@@ -36,7 +36,7 @@ The purpose of this unusual / unexpected use case with Cobol is to trigger furth
 below will demonstrate that it makes quite a lot of sense to reuse the massive existing assets on a modern cloud platform to further extend their 
 life and leverage them in new ways. It's especially attractive given the incredibly affordable costs of Lambdas when compared to costs of mainframe Mips!
 
-Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol/issues) for this purpose)
+Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol/issues) for this purpose). If you like this repository, please, give it a star!
 
 ## Cobol
 
@@ -59,8 +59,7 @@ lines of Cobol are still in operation. It also asserts that 43% of banking syste
 <b>Cobol Use in Finance Service Industry (Thomson Reuters)</b>
 </p>
 
-And this importance is not going to decline anytime soon: [IBM reports](https://techchannel.com/Enterprise/10/2019/closing-cobol-programming-skills-gap) 
-that more than 5 billion additional lines are produced each year!
+And this importance is not going to decline anytime soon: [IBM reports](https://techchannel.com/Enterprise/10/2019/closing-cobol-programming-skills-gap) that more than 5 billion additional lines are produced each year!
 
 ## Lambda Functions and Serverless Architecture
 
@@ -104,6 +103,8 @@ publicly accessible through the API gateway.
 
 This allows the implementation of [Infrastructure-as-Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) best practices.
 
+The SAM model for our Cobol Lambda is in the file [lambda-cobol-sam.yaml](lambda-cobol-sam.yaml). It contains a single [AWS::Serverless::Function](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html) with its parameters. During deployment, SAM & CloudFormation expand it into 6 more granular resources that can be located with "Resource creation Initiated" in last section below.
+
 ## Workflow and Components
 
 Implemented as a Github Action, the workflow  - scripted in [lambda-cobol.sh](lambda-cobol.sh) - comprises following key steps:
@@ -142,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Sat Feb 13 05:40:01 UTC 2021
+### execution date: Sat Feb 13 06:55:40 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -219,18 +220,18 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613194928/44e78dda-fd5b-4b67-afbf-506e9496e53c
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1613199462/68070e61-5b63-40bf-b240-d98ab97032b2
 
 
-2021-02-13 05:42:18 - Waiting for stack create/update to complete
+2021-02-13 06:57:52 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
 ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
 -------------------------------------------------------------------------------------------------
-CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      Resource creation      
                                                                            Initiated              
+CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_COMPLETE          AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          Resource creation      
@@ -242,16 +243,16 @@ CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        Resou
                          pi                                                Initiated              
 CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
                          pi                                                                       
-CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
-                         n                        urcePermissionProd                              
-CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
-                         n                        urcePermissionProd       Initiated              
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
-CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
-                         yment                    ymentaf1c952223                                 
+CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
+                         n                        urcePermissionProd       Initiated              
+CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
+                         n                        urcePermissionProd                              
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
                          yment                    ymentaf1c952223          Initiated              
+CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
+                         yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
                                                   tage                                            
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   Resource creation      
@@ -285,9 +286,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "ipemj23239",
+            "id": "gt6pk4h5de",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-02-13T05:42:42+00:00",
+            "createdDate": "2021-02-13T06:58:16+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -299,8 +300,8 @@ invocation result:
         }
     ]
 }
-api id: ipemj23239
+api id: gt6pk4h5de
  
-### Running curl https request to https://ipemj23239.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://gt6pk4h5de.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
