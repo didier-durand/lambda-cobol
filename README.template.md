@@ -36,7 +36,7 @@ The purpose of this unusual / unexpected use case with Cobol is to trigger furth
 below will demonstrate that it makes quite a lot of sense to reuse the massive existing assets on a modern cloud platform to further extend their 
 life and leverage them in new ways. It's especially attractive given the incredibly affordable costs of Lambdas when compared to costs of mainframe Mips!
 
-Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol/issues) for this purpose)
+Feel free to fork and replicate this repo in your own environment (see Setup section below). All feedback and suggestions for extensions welcome! (Please, open a [Github issue ticket](https://github.com/didier-durand/lambda-cobol/issues) for this purpose). If you like this repository, please, give it a star!
 
 ## Cobol
 
@@ -59,8 +59,7 @@ lines of Cobol are still in operation. It also asserts that 43% of banking syste
 <b>Cobol Use in Finance Service Industry (Thomson Reuters)</b>
 </p>
 
-And this importance is not going to decline anytime soon: [IBM reports](https://techchannel.com/Enterprise/10/2019/closing-cobol-programming-skills-gap) 
-that more than 5 billion additional lines are produced each year!
+And this importance is not going to decline anytime soon: [IBM reports](https://techchannel.com/Enterprise/10/2019/closing-cobol-programming-skills-gap) that more than 5 billion additional lines are produced each year!
 
 ## Lambda Functions and Serverless Architecture
 
@@ -103,6 +102,8 @@ Required artefacts and definitions are specified at a high-level of abstraction.
 publicly accessible through the API gateway. 
 
 This allows the implementation of [Infrastructure-as-Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) best practices.
+
+The SAM model for our Cobol Lambda is in the file [lambda-cobol-sam.yaml](lambda-cobol-sam.yaml). It contains a single [AWS::Serverless::Function](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html) with its parameters. During deployment, SAM & CloudFormation expand it into 6 more granular resources that can be located with "Resource creation Initiated" in last section below.
 
 ## Workflow and Components
 
