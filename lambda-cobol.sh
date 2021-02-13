@@ -5,7 +5,7 @@ touch "$REPORT"
 echo '```' >> "$REPORT"
 
 echo ' ' >> "$REPORT"
-echo "### execution date: $(date --utc)" | tee -a "$REPORT"
+echo "### execution date: $(date -u)" | tee -a "$REPORT"
 
 LAMBDA_NAME='lambda-cobol-hello-world'
 SAM_TEMPLATE='lambda-cobol-sam.yaml'
