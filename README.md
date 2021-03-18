@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Mar 11 01:47:36 UTC 2021
+### execution date: Thu Mar 18 01:49:24 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -183,7 +183,7 @@ Commands you can use next
 [*] Deploy: sam deploy --guided --template-file build/template.yaml
     
 
-SAM CLI update available (1.20.0); (1.19.1 installed)
+SAM CLI update available (1.21.1); (1.20.0 installed)
 To download: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
  
 ### Starting SAM deployment...
@@ -220,18 +220,18 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1615427380/783c7bca-2e58-4b3d-b40e-50bb63a0f098
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1616032304/2c120652-177a-41a7-90aa-34541961923f
 
 
-2021-03-11 01:49:51 - Waiting for stack create/update to complete
+2021-03-18 01:51:56 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
 ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
 -------------------------------------------------------------------------------------------------
-CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      Resource creation      
                                                                            Initiated              
+CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_COMPLETE          AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          Resource creation      
@@ -243,16 +243,16 @@ CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        Resou
                          pi                                                Initiated              
 CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
                          pi                                                                       
-CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
-                         yment                    ymentaf1c952223                                 
-CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
-                         n                        urcePermissionProd       Initiated              
 CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
                          n                        urcePermissionProd                              
-CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
+CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
                          yment                    ymentaf1c952223          Initiated              
+CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
+                         n                        urcePermissionProd       Initiated              
+CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
+                         yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
                                                   tage                                            
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   Resource creation      
@@ -286,9 +286,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "o7nd5xp8ll",
+            "id": "ina7cgzgi8",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-03-11T01:50:13+00:00",
+            "createdDate": "2021-03-18T01:52:20+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -300,8 +300,8 @@ invocation result:
         }
     ]
 }
-api id: o7nd5xp8ll
+api id: ina7cgzgi8
  
-### Running curl https request to https://o7nd5xp8ll.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://ina7cgzgi8.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
