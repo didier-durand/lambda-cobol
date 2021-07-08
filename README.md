@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Jul  1 02:01:34 UTC 2021
+### execution date: Thu Jul  8 01:59:59 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -216,10 +216,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1625104995/3daaeb8f-e340-4e54-9b59-bf06462c17c6
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1625709703/799c3553-8361-4c7a-8b88-dc16def5a578
 
 
-2021-07-01 02:03:26 - Waiting for stack create/update to complete
+2021-07-08 02:01:54 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
@@ -235,16 +235,16 @@ CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          Resou
 CREATE_COMPLETE          AWS::Lambda::Function    HelloWorldCobol          -                      
 CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        -                      
                          pi                                                                       
-CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
-                         pi                                                                       
 CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   ServerlessRestApi        Resource creation      
                          pi                                                Initiated              
-CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
-                         n                        urcePermissionProd                              
+CREATE_COMPLETE          AWS::ApiGateway::RestA   ServerlessRestApi        -                      
+                         pi                                                                       
 CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   Resource creation      
                          n                        urcePermissionProd       Initiated              
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
+CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
+                         n                        urcePermissionProd                              
 CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -                      
                          yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   Resource creation      
@@ -282,9 +282,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "m5w3o272lg",
+            "id": "azi318aybb",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-07-01T02:03:55+00:00",
+            "createdDate": "2021-07-08T02:02:21+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -294,15 +294,15 @@ invocation result:
             },
             "tags": {
                 "aws:cloudformation:logical-id": "ServerlessRestApi",
-                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/7f617f40-da10-11eb-be84-12a7ac2a1bf1",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/7191d740-df90-11eb-8764-0e69690dd155",
                 "aws:cloudformation:stack-name": "lambda-cobol-stack"
             },
             "disableExecuteApiEndpoint": false
         }
     ]
 }
-api id: m5w3o272lg
+api id: azi318aybb
  
-### Running curl https request to https://m5w3o272lg.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://azi318aybb.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
