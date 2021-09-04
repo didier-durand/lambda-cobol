@@ -16,8 +16,8 @@
 ## Goal
 
 This repository implements a fully automated [Github Workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) to deploy 
-and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCobol](https://en.wikipedia.org/wiki/GnuCOBOL). 
-GnuCobol compiles the source code as a native x86 module depending on the libcob library. Both are packaged and uploaded as a [custom Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html)
+and run as an [AWS Lambda function](https://aws.amazon.com/lambda/) a ['Hello World' Cobol program](hello-world.cob) compiled with [GnuCOBOL](https://en.wikipedia.org/wiki/GnuCOBOL). 
+GnuCOBOL compiles the source code as a native x86 module depending on the libcob library. Both are packaged and uploaded as a [custom Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html)
 by the workflow. The workflow is scheduled by cron on a minimalweekly basis to make sure that it keeps working.
 
 The [benefits of the serverless architecture](https://aws.amazon.com/lambda/serverless-architectures-learn-more/) are not reserved to newly written 
@@ -109,10 +109,10 @@ The SAM model for our Cobol Lambda is in the file [lambda-cobol-sam.yaml](lambda
 
 Implemented as a Github Action, the workflow  - scripted in [lambda-cobol.sh](lambda-cobol.sh) - comprises following key steps:
 
-1) A Docker image [is constructed](Dockerfile) to install the GnuCobol compiler and its dependencies on top of the base Amazon Linux image. The 
+1) A Docker image [is constructed](Dockerfile) to install the GnuCOBOL compiler and its dependencies on top of the base Amazon Linux image. The 
 purpose of such a container is to leverage the isolation provided by containers. Consequently, the build environment is fully controlled.
 2) This Cobol builder imports the source code of [hello-world.cob](hello-world.cob) and compiles it to generate an x86 native binary named ```hello-world```.
-3) This binary is packaged, via SAM CLI, with other required runtime artefacts. The libcob library is required by GnuCobol. The shell script ```bootstrap```(name 
+3) This binary is packaged, via SAM CLI, with other required runtime artefacts. The libcob library is required by GnuCOBOL. The shell script ```bootstrap```(name 
 imposed by specifications) implements the requirements of [custom Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-walkthrough.html).
 4) This package is deployed on the Lambda service via [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
 5) The SAM description is processed by AWS Lambda and CloudFormation to deploy the function.
@@ -122,7 +122,7 @@ imposed by specifications) implements the requirements of [custom Lambda runtime
 
 When a previous deployment of the CloudFormation stack is active, it gets deleted just before the SAM build to trigger the entire CloudFormation deployment process.
 
-**Note:** the version of GnuCobol currently used is v2.2. A [version 3.1 was published](https://sourceforge.net/projects/gnucobol/files/gnucobol/) in late December, 2020. But, its libcob runtime library has hardwired dependencies on very recent Linux system libraries, that are not yet available with proper version in Lambda runtime. We'll bump to newest GnuCobol when Lambda runtime gets updated.  
+**Note:** the version of GnuCOBOL currently used is v2.2. A [version 3.1 was published](https://sourceforge.net/projects/gnucobol/files/gnucobol/) in late December, 2020. But, its libcob runtime library has hardwired dependencies on very recent Linux system libraries, that are not yet available with proper version in Lambda runtime. We'll bump to newest GnuCOBOL when Lambda runtime gets updated.  
 
 ## Fork and Setup  
 
@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Sep  2 01:56:13 UTC 2021
+### execution date: Sat Sep  4 05:14:31 UTC 2021
  
 ### Check existing Lambdas functions...
 {
@@ -216,10 +216,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1630547891/4bdda2d6-0b07-4665-b804-f6f7542ca22c
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1630732582/dc7533d5-87dd-4a1d-9872-1fc182b74a1a
 
 
-2021-09-02 01:58:22 - Waiting for stack create/update to complete
+2021-09-04 05:16:33 - Waiting for stack create/update to complete
 
 CloudFormation events from changeset
 -------------------------------------------------------------------------------------------------
@@ -282,9 +282,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "1loq49m1li",
+            "id": "kxkzzjvsof",
             "name": "lambda-cobol-stack",
-            "createdDate": "2021-09-02T01:58:49+00:00",
+            "createdDate": "2021-09-04T05:16:58+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -294,15 +294,15 @@ invocation result:
             },
             "tags": {
                 "aws:cloudformation:logical-id": "ServerlessRestApi",
-                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/3a5cb380-0b91-11ec-a8bf-0a6046b66d41",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/3eb1e770-0d3f-11ec-8317-12f358a42763",
                 "aws:cloudformation:stack-name": "lambda-cobol-stack"
             },
             "disableExecuteApiEndpoint": false
         }
     ]
 }
-api id: 1loq49m1li
+api id: kxkzzjvsof
  
-### Running curl https request to https://1loq49m1li.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://kxkzzjvsof.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
