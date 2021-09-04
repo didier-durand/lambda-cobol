@@ -1,7 +1,7 @@
 FROM amazonlinux
 
 # Install GnuCOBOL dependencies
-RUN yum install tar gzip wget gcc make libdb-dev libncurses5-dev libgmp-dev gmp gmp-devel autoconf -y
+RUN yum install tar gzip wget gcc make libgmp-dev gmp gmp-devel autoconf -y
 
 # Install GNUCobol
 RUN wget -O gnu-cobol.tar.gz https://nav.dl.sourceforge.net/project/gnucobol/gnucobol/2.2/gnucobol-2.2.tar.gz
