@@ -122,7 +122,7 @@ imposed by specifications) implements the requirements of [custom Lambda runtime
 
 When a previous deployment of the CloudFormation stack is active, it gets deleted just before the SAM build to trigger the entire CloudFormation deployment process.
 
-**Note:** the version of GnuCOBOL currently used is v2.2. A [version 3.1 was published](https://sourceforge.net/projects/gnucobol/files/gnucobol/) in late December, 2020. But, its libcob runtime library has hardwired dependencies on very recent Linux system libraries, that are not yet available with proper version in Lambda runtime. We'll bump to newest GnuCOBOL when Lambda runtime gets updated. The official repository for all available versions of GnuCOBOL is [here]( https://ftp.gnu.org/gnu/gnucobol/?C=M;O=D)
+**Note:** the version of GnuCOBOL currently used is v2.2. A [version 3.1 was published](https://sourceforge.net/projects/gnucobol/files/gnucobol/) in late December, 2020. But, its libcob runtime library has hardwired dependencies on very recent Linux system libraries, that are not yet available with proper version in Lambda runtime. We'll bump to newest GnuCOBOL when Lambda runtime gets updated. The official repository for all available versions of GnuCOBOL is [here]( https://ftp.gnu.org/gnu/gnucobol/?C=M;O=D).
 
 ## Fork and Setup  
 
