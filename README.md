@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Mar 31 01:32:41 UTC 2022
+### execution date: Thu Apr  7 01:31:47 UTC 2022
  
 ### Check existing Lambdas functions...
 {
@@ -168,7 +168,10 @@ Below are the logs of the last execution related to the Lamdba service operated 
             "PackageType": "Zip",
             "Architectures": [
                 "x86_64"
-            ]
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            }
         }
     ]
 }
@@ -221,10 +224,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1648690487/011276f5-4257-4200-81c2-3be8f6c1896f
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1649295214/f87485cf-c918-47b6-bf07-a53a01ea0124
 
 
-2022-03-31 01:34:58 - Waiting for stack create/update to complete
+2022-04-07 01:33:45 - Waiting for stack create/update to complete
 
 CloudFormation events from stack operations
 -------------------------------------------------------------------------------------------------
@@ -256,10 +259,10 @@ CREATE_COMPLETE          AWS::ApiGateway::Deplo   ServerlessRestApiDeplo   -
                          yment                    ymentaf1c952223                                 
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
                                                   tage                                            
-CREATE_COMPLETE          AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
-                                                  tage                                            
 CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ServerlessRestApiProdS   Resource creation      
                                                   tage                     Initiated              
+CREATE_COMPLETE          AWS::ApiGateway::Stage   ServerlessRestApiProdS   -                      
+                                                  tage                                            
 CREATE_COMPLETE          AWS::Lambda::Permissio   HelloWorldCobolGetReso   -                      
                          n                        urcePermissionProd                              
 CREATE_COMPLETE          AWS::CloudFormation::S   lambda-cobol-stack       -                      
@@ -287,9 +290,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "jiquk37lkl",
+            "id": "dvogfn6pgb",
             "name": "lambda-cobol-stack",
-            "createdDate": "2022-03-31T01:35:40+00:00",
+            "createdDate": "2022-04-07T01:34:21+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -299,15 +302,15 @@ invocation result:
             },
             "tags": {
                 "aws:cloudformation:logical-id": "ServerlessRestApi",
-                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/c00e28f0-b092-11ec-beab-0eb6c2b8c189",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/bdb6c0a0-b612-11ec-8c2a-12fc34760d9f",
                 "aws:cloudformation:stack-name": "lambda-cobol-stack"
             },
             "disableExecuteApiEndpoint": false
         }
     ]
 }
-api id: jiquk37lkl
+api id: dvogfn6pgb
  
-### Running curl https request to https://jiquk37lkl.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://dvogfn6pgb.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
