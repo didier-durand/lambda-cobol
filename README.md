@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Apr 21 01:33:54 UTC 2022
+### execution date: Thu May  5 01:34:24 UTC 2022
  
 ### Check existing Lambdas functions...
 {
@@ -185,6 +185,7 @@ Built Template   : build/template.yaml
 
 Commands you can use next
 =========================
+[*] Validate SAM template: sam validate
 [*] Invoke Function: sam local invoke -t build/template.yaml
 [*] Test Function in the Cloud: sam sync --stack-name {stack-name} --watch
 [*] Deploy: sam deploy --guided --template-file build/template.yaml
@@ -224,18 +225,18 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1650504948/3d5747ad-1d60-43fc-a7d1-bd9b9961903c
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1651714572/5659607b-3bc5-4f64-8df1-59ad9d87e0cc
 
 
-2022-04-21 01:35:59 - Waiting for stack create/update to complete
+2022-05-05 01:36:24 - Waiting for stack create/update to complete
 
 CloudFormation events from stack operations
 -------------------------------------------------------------------------------------------------
 ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
 -------------------------------------------------------------------------------------------------
-CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      Resource creation      
                                                                            Initiated              
+CREATE_IN_PROGRESS       AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_COMPLETE          AWS::IAM::Role           HelloWorldCobolRole      -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          -                      
 CREATE_IN_PROGRESS       AWS::Lambda::Function    HelloWorldCobol          Resource creation      
@@ -290,9 +291,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "0wsl7mn5xg",
+            "id": "qy5yqhnrpj",
             "name": "lambda-cobol-stack",
-            "createdDate": "2022-04-21T01:36:37+00:00",
+            "createdDate": "2022-05-05T01:37:00+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -302,15 +303,15 @@ invocation result:
             },
             "tags": {
                 "aws:cloudformation:logical-id": "ServerlessRestApi",
-                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/5f7dc4a0-c113-11ec-b319-0af4a1b73773",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/bf906900-cc13-11ec-9bf3-0a1cefdc6e61",
                 "aws:cloudformation:stack-name": "lambda-cobol-stack"
             },
             "disableExecuteApiEndpoint": false
         }
     ]
 }
-api id: 0wsl7mn5xg
+api id: qy5yqhnrpj
  
-### Running curl https request to https://0wsl7mn5xg.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://qy5yqhnrpj.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
