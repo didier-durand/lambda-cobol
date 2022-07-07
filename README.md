@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Jun 30 01:35:21 UTC 2022
+### execution date: Thu Jul  7 01:34:36 UTC 2022
  
 ### Check existing Lambdas functions...
 {
@@ -224,10 +224,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1656553043/88a5ded8-f732-4ced-ad82-9bd04b6e531f
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1657157799/da5dab4f-4db4-4b66-9960-555e9f6895dd
 
 
-2022-06-30 01:37:34 - Waiting for stack create/update to complete
+2022-07-07 01:36:50 - Waiting for stack create/update to complete
 
 CloudFormation events from stack operations (refresh every 0.5 seconds)
 -------------------------------------------------------------------------------------------------
@@ -290,9 +290,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "hr2s0x8jj6",
+            "id": "vca8k8jxw1",
             "name": "lambda-cobol-stack",
-            "createdDate": "2022-06-30T01:38:09+00:00",
+            "createdDate": "2022-07-07T01:37:29+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -302,15 +302,15 @@ invocation result:
             },
             "tags": {
                 "aws:cloudformation:logical-id": "ServerlessRestApi",
-                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/30dc2c20-f815-11ec-a6a7-0eb23976eee1",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:514764745669:stack/lambda-cobol-stack/3f7aa740-fd95-11ec-a7d3-0ac92304a855",
                 "aws:cloudformation:stack-name": "lambda-cobol-stack"
             },
             "disableExecuteApiEndpoint": false
         }
     ]
 }
-api id: hr2s0x8jj6
+api id: vca8k8jxw1
  
-### Running curl https request to https://hr2s0x8jj6.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://vca8k8jxw1.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
