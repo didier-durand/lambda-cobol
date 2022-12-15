@@ -143,7 +143,7 @@ Below are the logs of the last execution related to the Lamdba service operated 
 
 ```
  
-### execution date: Thu Dec  8 01:31:55 UTC 2022
+### execution date: Thu Dec 15 01:32:04 UTC 2022
  
 ### Check existing Lambdas functions...
 {
@@ -227,10 +227,10 @@ Operation                LogicalResourceId        ResourceType             Repla
                                                   pi                                              
 -------------------------------------------------------------------------------------------------
 
-Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1670463239/af3bec62-0426-4c7a-8033-76d5f9c7e55a
+Changeset created successfully. arn:aws:cloudformation:us-east-1:514764745669:changeSet/samcli-deploy1671068031/3b81c878-e11f-4d93-8491-ed656ff2cff3
 
 
-2022-12-08 01:34:11 - Waiting for stack create/update to complete
+2022-12-15 01:34:03 - Waiting for stack create/update to complete
 
 CloudFormation events from stack operations (refresh every 0.5 seconds)
 -------------------------------------------------------------------------------------------------
@@ -293,9 +293,9 @@ invocation result:
 {
     "items": [
         {
-            "id": "cnfp8jpkh9",
+            "id": "68msh7r00d",
             "name": "lambda-cobol-stack",
-            "createdDate": "2022-12-08T01:34:48+00:00",
+            "createdDate": "2022-12-15T01:34:42+00:00",
             "version": "1.0",
             "apiKeySource": "HEADER",
             "endpointConfiguration": {
@@ -307,8 +307,8 @@ invocation result:
         }
     ]
 }
-api id: cnfp8jpkh9
+api id: 68msh7r00d
  
-### Running curl https request to https://cnfp8jpkh9.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
+### Running curl https request to https://68msh7r00d.execute-api.us-east-1.amazonaws.com/Prod/lambda-cobol-hello-world ...
 Hello World from COBOL! 
 ```
